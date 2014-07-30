@@ -5,7 +5,8 @@ class DiariesController < ApplicationController
   # GET /diaries.json
   def index
     @diary = Diary.new
-    @diaries = Diary.all
+#     @diaries = Diary.all
+    @diaries = Diary.where(email: current_user.email)
   end
 
   # GET /diaries/1
@@ -28,6 +29,7 @@ class DiariesController < ApplicationController
     @diary = Diary.new(diary_params)
     
     @diary.write_datetime = Time.now
+    @diary.email = current_user.email
 
     respond_to do |format|
       if @diary.save
