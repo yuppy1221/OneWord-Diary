@@ -29,8 +29,7 @@
         <table  class="table table-striped table-hover">
       <% end %>
       <tr>
-        <td width="50px"><%= link_to '編集', edit_diary_path(diary), :class=>"btn btn-default btn-xs" %></td>
-        <td width="100px"><%= diary.write_datetime.strftime("%H:%M:%S") %></td>
+        <td width="100px"><%= link_to diary.write_datetime.strftime("%H:%M:%S"), edit_diary_path(diary) %></td>
         <td><%= diary.word %></td>
       </tr>
     <% end %>
