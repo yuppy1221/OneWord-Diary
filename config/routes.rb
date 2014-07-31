@@ -1,4 +1,4 @@
-OneWordDialy::Application.routes.draw do
+OneWordDiary::Application.routes.draw do
   devise_for :users
   resources :diaries
 
