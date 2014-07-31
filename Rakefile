@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-OneWordDialy::Application.load_tasks
+OneWordDiary::Application.load_tasks
