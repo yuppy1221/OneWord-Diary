@@ -1,0 +1,31 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, :class => 'form-horizontal' }) do |f| %>
+  <fieldset>
+    <div class="form-group">
+      <div class="col-lg-4 col-lg-offset-1">
+        <h2>パスワードを忘れた方</h2>
+        <%= devise_error_messages! %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-4 col-lg-offset-1">
+        <%= f.label :email, 'メールアドレス' %><br />
+        <%= f.email_field :email, :class=>"form-control", autofocus: true %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-4 col-lg-offset-1">
+        <div class="form-group pull-right">
+          <%= f.submit "リセット", :class=>"btn btn-primary btn-lg" %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-4 col-lg-offset-1">
+        <div class="form-group pull-right">
+          <%= link_to "ログインへ", new_session_path(resource_name), :class=>"btn btn-default btn-lg" %>
+          <%= link_to "ユーザ登録へ", new_registration_path(resource_name), :class=>"btn btn-default btn-lg" %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+<% end %>
